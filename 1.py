@@ -9,7 +9,6 @@
 #S = "aabbccd"
 #result = dif(J, S)
 #print(result)
-
 #def dif(nums) :
     #x = set()
     #for i in nums:
