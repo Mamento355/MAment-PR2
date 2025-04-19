@@ -98,3 +98,42 @@
 #         delete_student(conn, 2)
 #
 #     conn.close()
+
+# import psycopg2
+# import datetime
+# import psutil
+# class System:
+#     def __init__(self):
+#         self.conn = psycopg2.connect(dbname='postgres', host='localhost',
+#                               user='postgres', password='Kirill266', port='5432')
+#         self.cursor = self.conn.cursor()
+#         self.conn.autocommit = True
+#
+#     def result(self):
+#         curent_time = datetime.datetime.now().strftime("%H:%M:%S")
+#         x = psutil.cpu_percent()
+#         self.cursor.execute("insert into Static(type,result,time_of) values ('procesor', %s, %s)",(x,curent_time))
+#
+#     def result1(self):
+#         curent_time = datetime.datetime.now().strftime("%H:%M:%S")
+#         c = str(psutil.disk_usage('/')[3])
+#         self.cursor.execute("insert into Static(type,result,time_of) values ('disk', %s, %s)",(c,curent_time))
+#     def result2(self):
+#         curent_time = datetime.datetime.now().strftime("%H:%M:%S")
+#         v = str(psutil.virtual_memory()[3])
+#         self.cursor.execute("insert into Static(type,result,time_of) values ('RAM', %s, %s)",(v,curent_time))
+#     def view_all(self):
+#         self.cursor.execute('select * from Static')
+#         result = self.cursor.fetchall()
+#         for i in result:
+#             print(*i)
+#     def create_tables(self):
+#        self.cursor.execute("create table Static( type varchar (30),result varchar (30),time_of time)")
+#     def __del__(self):
+#         self.cursor.close()
+#         self.conn.close()
+# y = System()
+# y.result()
+# y.result1()
+# y.result2()
+# y.view_all()
